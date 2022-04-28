@@ -1,11 +1,17 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.IO;
 using System.Net;
 using System.Xml;
+// using API_eSocial.Model;
+using System.Xml.Linq;
+using System.ServiceModel;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 
 namespace API_eSocial.Controllers
 {
-    public class WebServiceEsocial
+    public class WebServiceEsocial {
 
         public static SOAPManual()
         {
@@ -32,7 +38,7 @@ namespace API_eSocial.Controllers
         private static HttpWebRequest CreateWebRequest(string url, string action)
         {
             HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(url);
-            webRequest.Headers.Add("SOAPActiontion);
+            webRequest.Headers.Add("SOAPActiontion");
             webRequest.ContentType = "text/xml;charset=\"utf-8\"";
             webRequest.Accept = "text/xml";
             webRequest.Method = "POST";
@@ -69,16 +75,17 @@ namespace API_eSocial.Controllers
         [HttpPost]
         private static string enviarRequisicao()
         {
-           try
+            try
             {
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
-                //string web_service_teste = "https://webservices.producaorestrita.esocial.gov.br/servicos/empregador/enviarloteeventos/WsEnviarLoteEventos.svc";
+                string web_service_teste = "https://webservices.producaorestrita.esocial.gov.br/servicos/empregador/enviarloteeventos/WsEnviarLoteEventos.svc";
                 //              string web_service_producao = "https://webservices.envio.esocial.gov.br/servicos/empregador/enviarloteeventos/WsEnviarLoteEventos.svc";
 
                 string urlXML = @"C:\esocial\Templates\Esocial-S1000.xml";
 
                 X509Certificate2 x509Cert = new X509Certificate2(@"C:\esocial\certificado.pfx", "12345678");
 
+                string url = web_service_teste;
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
                 XDocument loteEventosXDoc = XDocument.Load(urlXML);
@@ -97,18 +104,29 @@ namespace API_eSocial.Controllers
                                         SecurityProtocolType.Tls12;
 
                 var wsClient = new PortalMadeirol.Web.ServiceEsocial.ServicoEnviarLoteEventosClient(binding, address);
-                
+
                 // Variável 'x509Cert' é do tipo X509Certificate2.
 
                 wsClient.ClientCredentials.ClientCertificate.Certificate = x509Cert;
 
                 var retornoEnvioXElement = wsClient.EnviarLoteEventos(loteEventosXDoc.Root);
                 wsClient.Close();
+                return Response;
+
             }
             catch (WebException ex)
             {
                 throw ex;
             }
         }
+        private static string ServicoEnviarLoteEventosClient(string binding, string address)
+        {
+            string Response = null;
+            return Response;
+    
+        }
     }
+
+
 }
+

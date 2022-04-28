@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Trabalho\\source\\repos\\projetos\\upbase\\officesafe\\API_eSocial\\API_eSocial.csproj": {}
+    "E:\\Users\\Nostradamos\\Desktop\\API_eSocial\\API_eSocial\\API_eSocial.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Trabalho\\source\\repos\\projetos\\upbase\\officesafe\\API_eSocial\\API_eSocial.csproj": {
+    "E:\\Users\\Nostradamos\\Desktop\\API_eSocial\\API_eSocial\\API_eSocial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Trabalho\\source\\repos\\projetos\\upbase\\officesafe\\API_eSocial\\API_eSocial.csproj",
+        "projectUniqueName": "E:\\Users\\Nostradamos\\Desktop\\API_eSocial\\API_eSocial\\API_eSocial.csproj",
         "projectName": "API_eSocial",
-        "projectPath": "C:\\Users\\Trabalho\\source\\repos\\projetos\\upbase\\officesafe\\API_eSocial\\API_eSocial.csproj",
-        "packagesPath": "C:\\Users\\Trabalho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Trabalho\\source\\repos\\projetos\\upbase\\officesafe\\API_eSocial\\obj\\",
+        "projectPath": "E:\\Users\\Nostradamos\\Desktop\\API_eSocial\\API_eSocial\\API_eSocial.csproj",
+        "packagesPath": "C:\\Users\\Nostradamos\\.nuget\\packages\\",
+        "outputPath": "E:\\Users\\Nostradamos\\Desktop\\API_eSocial\\API_eSocial\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Trabalho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nostradamos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -50,6 +47,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.ServiceModel.Http": {
+              "target": "Package",
+              "version": "[4.9.0, )"
             }
           },
           "imports": [
@@ -70,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     }

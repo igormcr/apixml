@@ -1,0 +1,7 @@
+E:\Users\Nostradamos\Desktop\API_eSocial\API_eSocial\obj\Debug\net5.0\API_eSocial.csproj.AssemblyReference.cache
+E:\Users\Nostradamos\Desktop\API_eSocial\API_eSocial\obj\Debug\net5.0\API_eSocial.GeneratedMSBuildEditorConfig.editorconfig
+E:\Users\Nostradamos\Desktop\API_eSocial\API_eSocial\obj\Debug\net5.0\API_eSocial.AssemblyInfoInputs.cache
+E:\Users\Nostradamos\Desktop\API_eSocial\API_eSocial\obj\Debug\net5.0\API_eSocial.AssemblyInfo.cs
+E:\Users\Nostradamos\Desktop\API_eSocial\API_eSocial\obj\Debug\net5.0\API_eSocial.csproj.CoreCompileInputs.cache
+E:\Users\Nostradamos\Desktop\API_eSocial\API_eSocial\obj\Debug\net5.0\API_eSocial.MvcApplicationPartsAssemblyInfo.cs
+E:\Users\Nostradamos\Desktop\API_eSocial\API_eSocial\obj\Debug\net5.0\API_eSocial.MvcApplicationPartsAssemblyInfo.cache
