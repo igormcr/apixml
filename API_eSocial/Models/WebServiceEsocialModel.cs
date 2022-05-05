@@ -1,19 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 namespace API_eSocial.Model
 {
-    public class X509Certificate2
+    [DataContract]
+    public class WebServiceEsocialModel
     {
+
+        [DataMember]
         private string path;
+        [DataMember]
         private string pass;
 
-        public X509Certificate2(string path, string pass)
+
+        public WebServiceEsocialModel(string path, string pass)
         {
             this.path = path;
             this.pass = pass;
         }
     }
+
 }

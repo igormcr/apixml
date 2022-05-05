@@ -8,17 +8,21 @@ using System.Xml.Linq;
 using System.ServiceModel;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using API_eSocial.Interface;
+using API_eSocial.Models;
 
 namespace API_eSocial.Controllers
 {
-    public class WebServiceEsocial {
+    public class WebServiceEsocial : IWebServiceEsocial {
 
-        public static SOAPManual()
+
+        public static string SOAPManual()
         {
             const string url = "URL";
             const string action = "METHOD_NAME";
 
-            XmlDocument soapEnvelopeXml = CreateSoapE CreateSoapEnvelope();
+            XmlDocument CreateSoapE = new XmlDocument();
+            XmlDocument soapEnvelopeXml = CreateSoapE = CreateSoapEnvelope();
             HttpWebRequest webRequest = CreateWebRequest(url, action);
 
             InsertSoapEnvelopeIntoWebRequest(soapEnvelopeXml, webRequest);
@@ -73,7 +77,7 @@ namespace API_eSocial.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        private static string enviarRequisicao()
+        public string enviarRequisicao()
         {
             try
             {
@@ -107,11 +111,12 @@ namespace API_eSocial.Controllers
 
                 // Variável 'x509Cert' é do tipo X509Certificate2.
 
-                wsClient.ClientCredentials.ClientCertificate.Certificate = x509Cert;
+                //wsClient.ServicoEnviarLoteEventosClient.ClientCredentials.ClientCertificate.Certificate = x509Cert;
 
                 var retornoEnvioXElement = wsClient.EnviarLoteEventos(loteEventosXDoc.Root);
                 wsClient.Close();
-                return Response;
+                string response = null;
+                return response;
 
             }
             catch (WebException ex)
@@ -119,11 +124,25 @@ namespace API_eSocial.Controllers
                 throw ex;
             }
         }
-        private static string ServicoEnviarLoteEventosClient(string binding, string address)
+
+        public void XmlMethod(XElement xml)
         {
-            string Response = null;
-            return Response;
-    
+            Console.WriteLine(xml.ToString());
+        }
+
+        public string Pass(string pass)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Path(XElement xml)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MachineModel TestMachine(MachineModel machine)
+        {
+            return machine;
         }
     }
 

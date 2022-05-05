@@ -67,6 +67,22 @@
           }
         }
       },
+      "SoapCore/1.1.0.28": {
+        "type": "package",
+        "dependencies": {
+          "System.CodeDom": "5.0.0",
+          "System.ServiceModel.Http": "4.8.1"
+        },
+        "compile": {
+          "lib/net5.0/SoapCore.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/SoapCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Swashbuckle.AspNetCore/5.6.3": {
         "type": "package",
         "dependencies": {
@@ -120,6 +136,15 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "System.CodeDom/5.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.CodeDom.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.CodeDom.dll": {}
+        }
       },
       "System.Drawing.Common/5.0.0": {
         "type": "package",
@@ -508,6 +533,28 @@
         "version.txt"
       ]
     },
+    "SoapCore/1.1.0.28": {
+      "sha512": "xZ8q1ABvXlVbNuXdceuguAW2a63jacsp2T6Nz73TqnGIaF8yEYslvN/l9zCX8FrMrwTpLpkwJt92N8tQVEa0+w==",
+      "type": "package",
+      "path": "soapcore/1.1.0.28",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/SoapCore.dll",
+        "lib/net5.0/SoapCore.xml",
+        "lib/net6.0/SoapCore.dll",
+        "lib/net6.0/SoapCore.xml",
+        "lib/netcoreapp3.1/SoapCore.dll",
+        "lib/netcoreapp3.1/SoapCore.xml",
+        "lib/netstandard2.0/SoapCore.dll",
+        "lib/netstandard2.0/SoapCore.xml",
+        "lib/netstandard2.1/SoapCore.dll",
+        "lib/netstandard2.1/SoapCore.xml",
+        "logo.png",
+        "soapcore.1.1.0.28.nupkg.sha512",
+        "soapcore.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/5.6.3": {
       "sha512": "UkL9GU0mfaA+7RwYjEaBFvAzL8qNQhNqAeV5uaWUu/Z+fVgvK9FHkGCpTXBqSQeIHuZaIElzxnLDdIqGzuCnVg==",
       "type": "package",
@@ -569,6 +616,30 @@
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
         "swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
+      ]
+    },
+    "System.CodeDom/5.0.0": {
+      "sha512": "JPJArwA1kdj8qDAkY2XGjSWoYnqiM7q/3yRNkt6n28Mnn95MuEGkZXUbPBf7qc3IjwrGY5ttQon7yqHZyQJmOQ==",
+      "type": "package",
+      "path": "system.codedom/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.CodeDom.dll",
+        "lib/net461/System.CodeDom.xml",
+        "lib/netstandard2.0/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.xml",
+        "ref/net461/System.CodeDom.dll",
+        "ref/net461/System.CodeDom.xml",
+        "ref/netstandard2.0/System.CodeDom.dll",
+        "ref/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.5.0.0.nupkg.sha512",
+        "system.codedom.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Drawing.Common/5.0.0": {
@@ -1190,6 +1261,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "SoapCore >= 1.1.0.28",
       "Swashbuckle.AspNetCore >= 5.6.3",
       "System.ServiceModel.Http >= 4.9.0"
     ]
@@ -1238,6 +1310,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "SoapCore": {
+            "target": "Package",
+            "version": "[1.1.0.28, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[5.6.3, )"

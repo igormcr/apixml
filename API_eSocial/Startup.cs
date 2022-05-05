@@ -1,12 +1,16 @@
+using API_eSocial.Controllers;
+using API_eSocial.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SoapCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +36,8 @@ namespace API_eSocial
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API_eSocial", Version = "v1" });
             });
+            services.TryAddSingleton<IWebServiceEsocial, WebServiceEsocial>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +50,8 @@ namespace API_eSocial
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API_eSocial v1"));
             }
 
+            app.UseSoapEndpoint<IWebServiceEsocial>("/Service.asmx", new BasicHttpBinding(), SoapSerializer.XmlSerializer);
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -54,6 +62,10 @@ namespace API_eSocial
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private class BasicHttpBinding : SoapEncoderOptions
+        {
         }
     }
 }
